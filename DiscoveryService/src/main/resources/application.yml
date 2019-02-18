@@ -1,0 +1,19 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    
+spring:
+  application:
+    name: DiscoveryService
+  cloud:
+    config:
+      uri:
+      - http://localhost:8888/
+  security:
+    user:
+      name: DiscNoGit

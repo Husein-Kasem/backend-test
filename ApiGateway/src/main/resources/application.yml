@@ -1,0 +1,23 @@
+zuul:
+  routes:
+    ms1:
+      path: /ms1/**
+      service-id: ms1
+    ms2:
+      path: /ms2/**
+      service-id: ms2
+server:  port: 8080
+spring:
+  application:
+    name: ApiGateway
+  profiles:
+    active:
+    - default
+  security:    user:      name: gateNoGit
+  cloud:    config:      uri:      - http://localhost:8888/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true

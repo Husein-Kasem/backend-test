@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ms2
+  profiles:
+    active:
+    - default
+  security:
+    user:
+      name: ms2NoGit
+  cloud:
+    config:
+      uri:
+      - http://localhost:8888/
+server:
+  port: 0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
